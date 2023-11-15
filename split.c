@@ -11,11 +11,11 @@
 */
 
 char **split(char *line) {
-	int buffer = INITIAL_BUFFER_SIZE;
-	int position = 0;
-	char **tokens;
-	char **temp;
-	char *token;
+int buffer = INITIAL_BUFFER_SIZE;
+int position = 0;
+char **tokens;
+char **temp;
+char *token;
 	tokens = malloc(buffer * sizeof(char *));
 	if (!tokens) {
 	return NULL;
