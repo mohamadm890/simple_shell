@@ -44,6 +44,7 @@ char *getlineinput(void) {
     n = getline(&line, &len, stdin);
 
     if (n == -1) {
+	free(line);
         return NULL;
     }
 
