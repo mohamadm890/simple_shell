@@ -10,7 +10,8 @@
 * @return - return an array of tokens
 */
 
-char **split(char *line) {
+char **split(char *line)
+{
 int buffer = INITIAL_BUFFER_SIZE;
 int position = 0;
 char **tokens;
@@ -19,7 +20,7 @@ char *token;
 	tokens = malloc(buffer * sizeof(char *));
 	if (!tokens)
 	{
-	return NULL;
+	return (NUL)L;
 	}
 	token = strtok(line, " \t\r\n\a");
 	while (token != NULL)
@@ -29,12 +30,12 @@ char *token;
 
 	if (position >= buffer)
 	{
-		buffer += BUFFER_INCREMENT; 
+		buffer += BUFFER_INCREMENT;
 		temp = realloc(tokens, buffer * sizeof(char *));
 	    if (!temp)
 	    {
 		free(tokens);
-		return NULL;
+		return (NULL);
 		}
 		tokens = temp;
 	}
