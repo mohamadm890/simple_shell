@@ -20,7 +20,7 @@ char *token;
 	tokens = malloc(buffer * sizeof(char *));
 	if (!tokens)
 	{
-	return (NUL)L;
+	return (NULL);
 	}
 	token = strtok(line, " \t\r\n\a");
 	while (token != NULL)
