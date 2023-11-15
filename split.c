@@ -24,7 +24,7 @@ char **split(char *line) {
     }
     token = strtok(line, " \t\r\n\a");
     while (token != NULL) {
-        tokens[position] = strdup(token);
+        tokens[position] = token;
         position++;
 
         if (position >= buffer) {
