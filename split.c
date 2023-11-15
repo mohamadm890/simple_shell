@@ -31,6 +31,9 @@ char **split(char *line) {
             buffer += BUFFER_INCREMENT; 
             temp = realloc(tokens, buffer * sizeof(char *));
             if (!temp) {
+                for (size_t i = 0; i < position; i++) {
+                    free(tokens[i]);
+                }
                 free(tokens);
                 return NULL;
             }
