@@ -15,12 +15,13 @@ int executeCommand(char **tokens, char **argv)
 {
 	pid_t child;
 	int status;
-	child = fork();
 	
-	if (child == -1) 
+	child = fork();
+
+	if (child == -1)
 	{
-        	perror("fork");
-        	exit(EXIT_FAILURE);
+		perror("fork");
+		exit(EXIT_FAILURE);
 	}
 	else if (child == 0) 
 	{
