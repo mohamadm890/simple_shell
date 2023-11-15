@@ -17,18 +17,22 @@ char **tokens;
 char **temp;
 char *token;
 	tokens = malloc(buffer * sizeof(char *));
-	if (!tokens) {
+	if (!tokens)
+	{
 	return NULL;
 	}
 	token = strtok(line, " \t\r\n\a");
-	while (token != NULL) {
+	while (token != NULL)
+	{
 		tokens[position] = token;
 		position++;
 
-	if (position >= buffer) {
+	if (position >= buffer)
+	{
 		buffer += BUFFER_INCREMENT; 
 		temp = realloc(tokens, buffer * sizeof(char *));
-	    if (!temp) {
+	    if (!temp)
+	    {
 		free(tokens);
 		return NULL;
 		}
