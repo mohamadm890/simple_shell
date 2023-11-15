@@ -10,13 +10,13 @@
  *
  * @param line The input string to be tokenized.
  * @return A dynamically allocated array of strings containing the tokens.
- *         Returns NULL in case of memory allocation failure.
+ * Returns NULL in case of memory allocation failure.
  */
 char **split(char *line) {
-    int buffer = INITIAL_BUFFER_SIZE;
-    int position = 0;
-    char **tokens;
-    char **temp;
+	int buffer = INITIAL_BUFFER_SIZE;
+	int position = 0;
+	char **tokens;
+   char **temp;
     char *token;
     tokens = malloc(buffer * sizeof(char *));
     if (!tokens) {
