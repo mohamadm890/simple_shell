@@ -17,7 +17,6 @@ int executeCommand(char **tokens, char **argv)
 	int status;
 	child = fork();
 	
-	// fork a child process
 	if (child == -1) 
 	{
         	perror("fork");

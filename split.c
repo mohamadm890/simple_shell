@@ -1,17 +1,15 @@
 #include "shell.h"
 #define INITIAL_BUFFER_SIZE 1040
 #define BUFFER_INCREMENT 1040
+
 /**
- * split a string into tokens based on whitespace characters.
- *
- * This function takes a string as input and tokenizes it using whitespace characters
- * (space, tab, newline, carriage return, and alarm). It dynamically allocates memory
- * for an array of strings to store the tokens.
- *
- * @param line The input string to be tokenized.
- * @return A dynamically allocated array of strings containing the tokens.
- * Returns NULL in case of memory allocation failure.
- */
+* @brief - splits a line into tokens
+*
+* @param - line The input line to be tokenized
+*
+* @return - return an array of tokens
+*/
+
 char **split(char *line) {
 	int buffer = INITIAL_BUFFER_SIZE;
 	int position = 0;
@@ -41,5 +39,5 @@ char **split(char *line) {
     }
 
     tokens[position] = NULL;
-    return tokens;
+    return (tokens);
 }
