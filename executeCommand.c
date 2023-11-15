@@ -15,7 +15,7 @@ int executeCommand(char **tokens, char **argv)
 {
 	pid_t child;
 	int status;
-	
+
 	child = fork();
 
 	if (child == -1)
@@ -23,19 +23,19 @@ int executeCommand(char **tokens, char **argv)
 		perror("fork");
 		exit(EXIT_FAILURE);
 	}
-	else if (child == 0) 
+	else if (child == 0)
 	{
 
 	if (execve(tokens[0], tokens, environ))
 	{
-		// error handling - execve failure
+
 		perror(argv[0]);
 		exit(EXIT_FAILURE);
 	}
-	else 
+	else
 	{
 		waitpid(child, &status, 0);
 	}
-	// return the exit the executed command
-	return WEXITSTATUS(status);
+
+	return (WEXITSTATUS(status));
 }
