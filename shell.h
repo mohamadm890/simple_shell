@@ -5,6 +5,7 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <stddef.h>
+extern char **environ;
 #define INITIAL_BUFFER_SIZE 1040
 #define BUFFER_INCREMENT 1040
 char *getlineinput(void);

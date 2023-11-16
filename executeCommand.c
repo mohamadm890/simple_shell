@@ -18,7 +18,7 @@ exit(EXIT_FAILURE);
 }
 else if (child == 0)
 {
-if (execve(tokens[0], tokens, NULL))
+if (execve(tokens[0], tokens, environ) == -1)
 {
 perror(argv[0]);
 exit(EXIT_FAILURE);
