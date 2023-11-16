@@ -12,12 +12,15 @@ int main(int argc, char **argv)
 char *line = NULL;
 char **commands = NULL;
 (void) argc;
+int status = 0;
 while (1)
 {
 line = getlineinput();
 if (line == NULL)
 {
-break;
+if (isatty(STDIN_FILENO))
+write(STDOUT_FILENO, "$/n", 1);
+return (status);
 }
 commands = split(line);
 if (!commands)
