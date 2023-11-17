@@ -1,3 +1,5 @@
+#ifndef SHELL_H
+#define SHELL_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,3 +14,5 @@ char *getlineinput(void);
 int executeCommand(char **tokens, char **argv);
 int main(int argc, char **argv);
 char **split(char *line);
+
+#endif
