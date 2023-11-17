@@ -6,7 +6,6 @@
  *
  * Return: 1 if true, 0 otherwise
  */
-
 int main(int argc, char **argv)
 {
 char *line = NULL;
@@ -17,6 +16,8 @@ while (1)
 line = getlineinput();
 if (line == NULL)
 {
+if (isatty(STDIN_FILENO))
+write(STDIN_FILENO, "\n", 1);
 break;
 }
 commands = split(line);
